@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")    
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div id="header-wrapper">       
+        <div id="header" class="container">
+            <div id="logo">
+                <span class="icon icon-group"></span>
+                <h1><a href="#">Plushiness</a></h1>
+                <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span>
+            </div>
+            <div id="triangle-up"></div>
+        </div>
+    </div>
+    <div id="menu-wrapper">
+        <div id="menu">
+            <ul>                
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Articles", "Index", "Articles")</li>
+                <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Gallery", "Index", "Gallery")</li>
+                @*<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+        <li><a href="#" accesskey="2" title="">Our Clients</a></li>
+        <li><a href="#" accesskey="3" title="">About Us</a></li>
+        <li><a href="#" accesskey="4" title="">Careers</a></li>
+        <li><a href="#" accesskey="5" title="">Contact Us</a></li>*@
+            </ul>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="featured-wrapper">
+
+            <div class="extra2 container">
+                @RenderBody()
+            </div>
+
+        </div>
+    </div>
+    <div id="stamp" class="container">
+        <div class="hexagon"><span class="icon icon-wrench"></span></div>
+    </div>
+    <div id="copyright" class="container">
+        <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

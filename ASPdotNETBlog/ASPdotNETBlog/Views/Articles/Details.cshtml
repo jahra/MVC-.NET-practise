@@ -1,0 +1,31 @@
+﻿@model ASPdotNETBlog.Models.Article
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div id="wrapper">
+    <div id="featured-wrapper">
+
+        <div class="extra2 container">
+            <div class="ebox1">                
+                <div class="title">
+                    <h2>@Model.Name</h2>
+                    <span class="byline">@Model.Author | @Model.date</span>
+                </div>
+                <p>@Html.Raw(Model.Text)</p>                
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<p>
+    @if (User.IsInRole("admin"))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class="button-article"})
+    }
+    @Html.ActionLink("Back", "Index", null, new { @class="button-article"})
+</p>

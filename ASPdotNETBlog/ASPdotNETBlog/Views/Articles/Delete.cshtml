@@ -1,0 +1,28 @@
+﻿@model ASPdotNETBlog.Models.Article
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<br>
+<div>
+
+    <div class="title">
+        <h2>@Model.Name</h2>
+        <span class="byline">@Model.Author | @Model.date.Day.@Model.date.Month.@Model.date.Year</span>
+    </div>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="button-big btn-danger" />
+            @Html.ActionLink("Back", "Index", null, new { @class = "button-article button-big" })
+        </div>
+    }
+</div>
